@@ -1,3 +1,8 @@
+#Write a program It should be realized as a ‘Player’class, where each of the player is a separate object. Inside it stores the score of the player and has 
+#method for calculating the score of a given word. Make a simple text UI to enhance the program's 
+#accessibility for players
+
+
 class Player:
     def __init__(self, name):
         self.name = name
