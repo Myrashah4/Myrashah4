@@ -1,3 +1,4 @@
+//simple matrix calculator in Java that supports addition, subtraction, multiplication, and scalar multiplication operations
 import java.util.Scanner;
 
 public class MatrixCalculator {
