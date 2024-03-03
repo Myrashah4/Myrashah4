@@ -1,0 +1,42 @@
+class Employee:
+    def __init__(self, emp_id, emp_name, emp_salary, emp_department):
+        self.emp_id, self.emp_name, self.emp_salary, self.emp_department = emp_id, emp_name, emp_salary, emp_department
+
+    def calculate_emp_salary(self, salary, hours_worked):
+        if hours_worked > 50:
+            overtime = hours_worked - 50
+            overtime_amount = overtime * (salary / 50)
+            total_salary = salary + overtime_amount
+            return total_salary
+        else:
+            return salary
+
+    def assign_department(self, new_department):
+        self.emp_department = new_department
+        return f"{self.emp_name}'s department has been changed to {new_department}"
+
+    def print_employee_details(self):
+        print(f"Employee ID: {self.emp_id}")
+        print(f"Employee Name: {self.emp_name}")
+        print(f"Employee Salary: ${self.emp_salary}")
+        print(f"Employee Department: {self.emp_department}")
+
+# Get user input
+emp_id = int(input("Enter Employee ID: "))
+emp_name = input("Enter Employee Name: ")
+emp_salary = float(input("Enter Employee Salary: $"))
+emp_department = input("Enter Employee Department: ")
+
+# Create Employee instance
+employee1 = Employee(emp_id, emp_name, emp_salary, emp_department)
+
+# Example usage with input
+employee1.print_employee_details()
+
+hours_worked = float(input("Enter hours worked: "))
+new_salary = employee1.calculate_emp_salary(emp_salary, hours_worked)
+print(f"New calculated salary: ${new_salary}")
+
+new_department = input("Enter new department: ")
+print(employee1.assign_department(new_department))
+employee1.print_employee_details()
